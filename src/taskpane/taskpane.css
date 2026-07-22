@@ -1,0 +1,122 @@
+:root {
+  --accent: #0f6e56;
+  --accent-hover: #0b5744;
+  --viewport: #e8a317;
+  --bg: #1a1d21;
+  --surface: #24282e;
+  --border: #3a4048;
+  --text: #e8eaed;
+  --text-muted: #9aa0a6;
+  --map-empty: #2c3138;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", "Candara", sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.hidden { display: none !important; }
+
+.header {
+  flex: 0 0 auto;
+  padding: 12px 14px 10px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.meta {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.ghost-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.ghost-btn:hover { border-color: var(--accent); color: #fff; }
+.ghost-btn:disabled { opacity: 0.45; cursor: default; }
+
+.map-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 180px;
+  margin: 10px;
+  background: var(--map-empty);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  touch-action: none;
+}
+
+#map-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+.viewport {
+  position: absolute;
+  border: 2px solid var(--viewport);
+  background: rgba(232, 163, 23, 0.18);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+  cursor: grab;
+  pointer-events: auto;
+  z-index: 2;
+}
+.viewport:active { cursor: grabbing; }
+
+.empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.footer {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 12px;
+}

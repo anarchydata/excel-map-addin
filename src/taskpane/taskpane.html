@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Excel Map</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <link rel="stylesheet" href="taskpane.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="header-top">
+      <h1 class="title">Excel Map</h1>
+      <button id="refresh-btn" class="ghost-btn" type="button" title="Rebuild map from used range">Refresh</button>
+    </div>
+    <p id="meta-text" class="meta">Loading…</p>
+  </header>
+
+  <main class="map-stage" id="map-stage">
+    <canvas id="map-canvas" aria-label="Sheet minimap"></canvas>
+    <div id="viewport" class="viewport" hidden title="Drag to scroll"></div>
+    <p id="empty-state" class="empty hidden">No used range on this sheet.</p>
+  </main>
+
+  <footer class="footer">
+    <span id="status-text">Opening map…</span>
+  </footer>
+
+  <script src="taskpane.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "excel-map-addin",
+  "version": "1.0.0",
+  "description": "Excel add-in minimap for navigating the used range of a sheet",
+  "license": "MIT",
+  "scripts": {
+    "dev-server": "node server.js",
+    "start": "office-addin-debugging start manifest.xml desktop",
+    "stop": "office-addin-debugging stop manifest.xml",
+    "validate": "office-addin-manifest validate manifest.xml",
+    "icons": "node assets/generate-icons.js"
+  },
+  "devDependencies": {
+    "office-addin-debugging": "^5.1.5",
+    "office-addin-dev-certs": "^1.13.5",
+    "office-addin-manifest": "^1.13.6"
+  },
+  "config": {
+    "app_to_debug": "excel",
+    "app_type_to_debug": "desktop",
+    "dev_server_port": 3002
+  }
+}
