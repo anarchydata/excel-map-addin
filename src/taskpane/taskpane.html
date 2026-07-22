@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Excel Map</title>
-  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
   <link rel="stylesheet" href="taskpane.css"/>
 </head>
 <body>
@@ -18,7 +18,16 @@
 
   <main class="map-stage" id="map-stage">
     <canvas id="map-canvas" aria-label="Sheet minimap"></canvas>
-    <div id="viewport" class="viewport" hidden title="Drag to scroll"></div>
+    <div id="viewport" class="viewport" hidden title="Drag to pan · resize corners to zoom">
+      <span class="vp-handle nw" data-handle="nw"></span>
+      <span class="vp-handle ne" data-handle="ne"></span>
+      <span class="vp-handle sw" data-handle="sw"></span>
+      <span class="vp-handle se" data-handle="se"></span>
+      <span class="vp-handle n" data-handle="n"></span>
+      <span class="vp-handle s" data-handle="s"></span>
+      <span class="vp-handle e" data-handle="e"></span>
+      <span class="vp-handle w" data-handle="w"></span>
+    </div>
     <p id="empty-state" class="empty hidden">No used range on this sheet.</p>
   </main>
 
